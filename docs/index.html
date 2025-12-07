@@ -1,38 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sales Insight Dashboard Project</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 30px; line-height: 1.6; }
-        h1 { color: #333; }
-        h2 { color: #555; }
-        .section { margin-bottom: 30px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 40px; 
+            background-color: #f7f7f7; 
+            color: #333;
+            line-height: 1.7;
+        }
+        h1 { font-size: 32px; margin-bottom: 10px; }
+        h2 { margin-top: 30px; color: #444; }
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        a.button {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #0078ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        a.button:hover { background: #005fcc; }
     </style>
 </head>
 <body>
 
-<h1>Sales Insight Dashboard</h1>
+<h1>📊 Sales Insight Dashboard — Analytics Project</h1>
+<p>
+This project demonstrates an end-to-end data analysis workflow including 
+data extraction, cleaning, loading into SQLite using Python, and deriving business insights using SQL.
+</p>
 
-<p>This project demonstrates an end-to-end analytics workflow using Python ETL, SQL data modeling, and business insights from sales data.</p>
-
-<div class="section">
-    <h2>Dataset</h2>
-    <p>Source: sales_sample.csv</p>
+<div class="card">
+    <h2>📁 Dataset</h2>
+    <p><b>File:</b> sales_sample.csv</p>
+    <p>
+        Contains sales transactions including dates, customers, product categories, sales amount,
+        profit, and quantities.
+    </p>
 </div>
 
-<div class="section">
-    <h2>ETL Pipeline</h2>
-    <p>Data cleaning and loading into SQLite using Python.</p>
+<div class="card">
+    <h2>⚙️ ETL Pipeline (Python)</h2>
+    <p>
+        The Python ETL script:
+        <ul>
+            <li>Loads raw CSV data</li>
+            <li>Cleans and formats columns</li>
+            <li>Creates a SQLite database</li>
+            <li>Inserts cleaned data for analysis</li>
+        </ul>
+    </p>
 </div>
 
-<div class="section">
-    <h2>SQL Analysis</h2>
-    <p>Queries for monthly revenue, product performance, and customer insights.</p>
+<div class="card">
+    <h2>🧮 SQL Analysis</h2>
+    <p>
+        SQL queries calculate monthly revenue, customer trends, and product-level performance.
+        Example:
+    </p>
+    <pre>
+SELECT strftime('%Y-%m', OrderDate) AS Month,
+       SUM(Sales) AS MonthlyRevenue
+FROM sales
+GROUP BY Month;
+    </pre>
 </div>
 
-<div class="section">
-    <h2>GitHub Repository</h2>
-    <a href="https://github.com/RuhiChopda/Sales_Insight_Dashboard">View Code on GitHub</a>
+<div class="card">
+    <h2>🔗 GitHub Repository</h2>
+    <a class="button" href="https://github.com/RuhiChopda/Sales_Insight_Dashboard" target="_blank">
+        View Project Code on GitHub
+    </a>
 </div>
 
 </body>
