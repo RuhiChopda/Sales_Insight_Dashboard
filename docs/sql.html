@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQL Analysis</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="etl.html">ETL Pipeline</a>
+    <a href="sql.html">SQL Analysis</a>
+    <a href="data.html">Data Preview</a>
+    <a href="https://github.com/RuhiChopda/Sales_Insight_Dashboard" target="_blank">GitHub Repo</a>
+</div>
+
+<div class="container">
+    <h1>🧠 SQL Analysis</h1>
+
+    <div class="card">
+        <h2>Monthly Revenue Query</h2>
+        <pre>
+SELECT 
+    strftime('%Y-%m', OrderDate) AS Month,
+    SUM(Sales) AS MonthlyRevenue
+FROM sales
+GROUP BY Month;
+        </pre>
+    </div>
+</div>
+
+</body>
+</html>
