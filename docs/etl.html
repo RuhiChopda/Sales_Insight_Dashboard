@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ETL Pipeline</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="etl.html">ETL Pipeline</a>
+    <a href="sql.html">SQL Analysis</a>
+    <a href="data.html">Data Preview</a>
+    <a href="https://github.com/RuhiChopda/Sales_Insight_Dashboard" target="_blank">GitHub Repo</a>
+</div>
+
+<div class="container">
+    <h1>⚙️ ETL Pipeline (Python)</h1>
+
+    <div class="card">
+        <h2>ETL Script: etl_to_sqlite.py</h2>
+        <pre>
+<?php
+// not actual PHP - ignore
+?>
+# Paste your Python ETL code here for display on website
+
+import pandas as pd
+import sqlite3
+
+df = pd.read_csv("../data/sales_sample.csv")
+
+conn = sqlite3.connect("sales.db")
+df.to_sql("sales", conn, if_exists="replace", index=False)
+        </pre>
+    </div>
+</div>
+
+</body>
+</html>
